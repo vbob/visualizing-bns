@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import { Col, Layout, Row } from 'antd';
+import { useEffect, useState } from 'react';
+import { Button, Col, Divider, Layout, Row, Upload } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 import * as d3 from 'd3'
 import './App.css'
@@ -7,19 +8,11 @@ import './App.css'
 const { Header, Content } = Layout;
 
 function App() {
-  useEffect(() => {
-    var svg = d3.select("#circle").append("svg").attr("width", 200).attr("height", 200)
-    svg.append('circle')
-      .attr('cx', 100)
-      .attr('cy', 100)
-      .attr('r', 50)
-      .attr('stroke', 'black')
-      .attr('fill', '#69a3b2');
+  const [network, setNetwork] = useState()
 
-    return () => {
-      d3.select("#circle svg").remove()
-    }
-  }, [])
+  useEffect(() => {
+    console.log(network)
+  }, [network])
 
   return (
     <Layout className="layout">
@@ -29,10 +22,22 @@ function App() {
       <Content style={{ padding: '0 50px' }}>
         <div className="site-layout-content">
           <Row>
-            <Col xs={24} md={8}>
-              File Input
+            <Col xs={24} md={6} style={{ borderRight: '1px solid #dddddd', paddingRight: '24px' }}>
+              <h2>Inputs:</h2>
+              <Upload beforeUpload={() => false} onChange={(e) => {
+                let reader = new FileReader(e.file)
+                reader.readAsText(e.file)
+                reader.onload = async (e) => {
+                  let openedJson = e.target.result
+                  let content = await JSON.parse(openedJson)
+                  setNetwork(content)
+                }
+              }} maxCount={1}>
+                <Button icon={<UploadOutlined />}>Bayesian Network</Button>
+              </Upload>
             </Col>
-            <Col xs={24} md={16}>
+            <Col xs={24} md={18} style={{ paddingLeft: '24px' }}>
+              <h2>Visualization:</h2>
               <span id="circle" />
             </Col>
           </Row>
