@@ -13,6 +13,12 @@
     background: #fff;
 }
 
+#visualization svg {
+    height: calc(100vh - 220px);
+    width: calc(100vh - 220px);
+}
+
+
 #components-layout-demo-top .logo {
     float: left;
     width: 120px;

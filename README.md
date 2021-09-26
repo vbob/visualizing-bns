@@ -2,6 +2,8 @@
 
 Learning and visualizing Bayesian Networks made easy
 
+![image1](./images/img1.png)
+
 ## Functionalities
 
 * Allow beginners to easily learn and visualize Bayesian Networks;
