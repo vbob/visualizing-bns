@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Visualizing BNs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Learning and visualizing Bayesian Networks made easy
 
-## Available Scripts
+## Functionalities
 
-In the project directory, you can run:
+* Allow beginners to easily learn and visualize Bayesian Networks;
+* Help researchers to visualize networks learned in all the main libraries, such as bnlearn and PGMpy;
+* Provide visualization tools for debugging and comparing structures and probability tables.
 
-### `npm start`
+## How to use it
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We are currently in early stages of development.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+If you want to give an incentive or help us to make this work, please follow this project and create issues so we can discuss your ideas.
 
-### `npm test`
+## Tools used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The app is divided in two major parts:
 
-### `npm run build`
+    1. The Bayesian Networks learning and inference server
+    2. The Bayesian Networks visualization server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Learning and Inference Server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Python 3.8
+* Django
+* PGMPy
+* PyMC3
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Visualization Server
 
-### `npm run eject`
+* Node.js
+* React.js
+* D3.js
+* Ant Design
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Roadmap
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Create a Node.js + React webserver capable of:
+    * Opening JSON files with network models;
+    * Plotting the networks with D3.js:
+        * The plot will contain the edges and nodes;
+        * Each nodes when clicked will display its Conditional Probability Table.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Create a Django webserver capable of:
+    * Receiving a CSV dataset;
+    * Learning a network based on the CSV dataset:
+        * With selectable methodology (HillClimb, PC or K2)
+    * Return the JSON with the learned network
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+3. Add methods that allow learned Bayesian Network to be compared to the base model
 
-## Learn More
+4. Add methods for combining Bayesian networks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## References
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Koller, D., & Friedman, N. (2009). Probabilistic graphical models: principles and techniques. MIT press.
+* Murphy, K. P. (2012). Machine learning: a probabilistic perspective. MIT press.
+* Neapolitan, R. E. (2004). Learning bayesian networks (Vol. 38). Upper Saddle River, NJ: Pearson Prentice Hall.
