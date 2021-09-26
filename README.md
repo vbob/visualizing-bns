@@ -40,9 +40,9 @@ The app is divided in two major parts:
 ## Roadmap
 
 1. Create a Node.js + React webserver capable of:
-    * Opening JSON files with network models;
+    * ~Opening JSON files with network models~;
     * Plotting the networks with D3.js:
-        * The plot will contain the edges and nodes;
+        * ~The plot will contain the edges and nodes~;
         * Each nodes when clicked will display its Conditional Probability Table.
 
 2. Create a Django webserver capable of:
