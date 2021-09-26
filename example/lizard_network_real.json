@@ -1,0 +1,116 @@
+{
+    "dataset": "Lizard",
+    "networkId": "0",
+    "timestamp": "2021-09-26T12:43:00.000Z",
+    "nodes": [
+        {
+            "name": "Species",
+            "classes": [
+                "Distichus",
+                "Sagrei"
+            ]
+        },
+        {
+            "name": "Diameter",
+            "classes": [
+                "narrow",
+                "wide"
+            ]
+        },
+        {
+            "name": "Height",
+            "classes": [
+                "high",
+                "low"
+            ]
+        }
+    ],
+    "edges": [
+        [
+            "Species",
+            "Diameter"
+        ],
+        [
+            "Species",
+            "Height"
+        ]
+    ],
+    "probabilities": [
+        {
+            "variable": "Height",
+            "parents": [],
+            "p": [
+                {
+                    "class": "high",
+                    "parentsStates": [],
+                    "p": 0.5
+                },
+                {
+                    "class": "low",
+                    "parentsStates": [],
+                    "p": 0.5
+                }
+            ]
+        },
+        {
+            "variable": "Diameter",
+            "parents": [
+                "Species"
+            ],
+            "p": [
+                {
+                    "class": "narrow",
+                    "parentsStates": [
+                        "Distichus",
+                        "Sagrei"
+                    ],
+                    "p": [
+                        0.50,
+                        0.75
+                    ]
+                },
+                {
+                    "class": "wide",
+                    "parentsStates": [
+                        "Distichus",
+                        "Sagrei"
+                    ],
+                    "p": [
+                        0.50,
+                        0.25
+                    ]
+                }
+            ]
+        },
+        {
+            "node": "Species",
+            "parents": [
+                "Height"
+            ],
+            "p": [
+                {
+                    "class": "Distichus",
+                    "parentsStates": [
+                        "high",
+                        "low"
+                    ],
+                    "p": [
+                        0.50,
+                        1
+                    ]
+                },
+                {
+                    "class": "Sagrei",
+                    "parentsStates": [
+                        "high",
+                        "low"
+                    ],
+                    "p": [
+                        0.50,
+                        0
+                    ]
+                }
+            ]
+        }
+    ]
+}
