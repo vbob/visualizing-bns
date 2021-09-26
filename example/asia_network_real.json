@@ -1,0 +1,377 @@
+{
+    "dataset": "Asia",
+    "networkId": "0",
+    "timestamp": "2021-09-26T16:03:00.000Z",
+    "nodes": [
+        {
+            "name": "asia",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "tub",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "smoke",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "lung",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "bronc",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "either",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "xray",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        },
+        {
+            "name": "dysp",
+            "classes": [
+                "yes",
+                "no"
+            ]
+        }
+    ],
+    "edges": [
+        [
+            "asia",
+            "tub"
+        ],
+        [
+            "smoke",
+            "lung"
+        ],
+        [
+            "smoke",
+            "bronc"
+        ],
+        [
+            "tub",
+            "either"
+        ],
+        [
+            "lung",
+            "either"
+        ],
+        [
+            "either",
+            "xray"
+        ],
+        [
+            "either",
+            "dysp"
+        ],
+        [
+            "bronc",
+            "dysp"
+        ]
+    ],
+    "probabilities": [
+        {
+            "variable": "asia",
+            "parents": [],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [],
+                    "p": 0.5
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [],
+                    "p": 0.5
+                }
+            ]
+        },
+        {
+            "variable": "smoke",
+            "parents": [],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [],
+                    "p": 0.5
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [],
+                    "p": 0.5
+                }
+            ]
+        },
+        {
+            "variable": "tub",
+            "parents": [
+                "asia"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.05,
+                        0.01
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.95,
+                        0.99
+                    ]
+                }
+            ]
+        },
+        {
+            "variable": "lung",
+            "parents": [
+                "smoke"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.1,
+                        0.01
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.9,
+                        0.99
+                    ]
+                }
+            ]
+        },
+        {
+            "variable": "bronc",
+            "parents": [
+                "smoke"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.6,
+                        0.3
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.4,
+                        0.7
+                    ]
+                }
+            ]
+        },
+        {
+            "variable": "either",
+            "parents": [
+                "lung",
+                "tub"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        [
+                            "yes",
+                            "yes"
+                        ],
+                        [
+                            "no",
+                            "yes"
+                        ],
+                        [
+                            "yes",
+                            "no"
+                        ],
+                        [
+                            "no",
+                            "no"
+                        ]
+                    ],
+                    "p": [
+                        1,
+                        1,
+                        1,
+                        0
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        [
+                            "yes",
+                            "yes"
+                        ],
+                        [
+                            "no",
+                            "yes"
+                        ],
+                        [
+                            "yes",
+                            "no"
+                        ],
+                        [
+                            "no",
+                            "no"
+                        ]
+                    ],
+                    "p": [
+                        0,
+                        0,
+                        0,
+                        1
+                    ]
+                }
+            ]
+        },
+        {
+            "variable": "xray",
+            "parents": [
+                "either"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.98,
+                        0.05
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        "yes",
+                        "no"
+                    ],
+                    "p": [
+                        0.02,
+                        0.95
+                    ]
+                }
+            ]
+        },
+        {
+            "variable": "dysp",
+            "parents": [
+                "bronc",
+                "either"
+            ],
+            "p": [
+                {
+                    "class": "yes",
+                    "parentsStates": [
+                        [
+                            "yes",
+                            "yes"
+                        ],
+                        [
+                            "no",
+                            "yes"
+                        ],
+                        [
+                            "yes",
+                            "no"
+                        ],
+                        [
+                            "no",
+                            "no"
+                        ]
+                    ],
+                    "p": [
+                        0.9,
+                        0.7,
+                        0.8,
+                        0.1
+                    ]
+                },
+                {
+                    "class": "no",
+                    "parentsStates": [
+                        [
+                            "yes",
+                            "yes"
+                        ],
+                        [
+                            "no",
+                            "yes"
+                        ],
+                        [
+                            "yes",
+                            "no"
+                        ],
+                        [
+                            "no",
+                            "no"
+                        ]
+                    ],
+                    "p": [
+                        0.1,
+                        0.3,
+                        0.2,
+                        0.9
+                    ]
+                }
+            ]
+        }
+    ]
+}

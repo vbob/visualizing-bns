@@ -1,24 +1,18 @@
 import { useEffect, useState } from 'react';
-import { Button, Col, Divider, Layout, Row, Upload } from 'antd';
+import { Button, Col, Layout, Row, Upload } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 import * as d3 from 'd3'
-import { schemeCategory10 } from 'd3-scale-chromatic';
 import './App.css'
 
 const { Header, Content } = Layout;
 
-const [height, width] = [400, 400]
+const [height, width] = [200, 200]
 
 function App() {
   const [network, setNetwork] = useState()
 
   useEffect(() => {
-    const color = d => {
-      const scale = d3.scaleOrdinal(d3.schemeCategory10);
-      return scale(d.group);
-    }
-
     const drag = simulation => {
 
       function dragstarted(event, d) {
