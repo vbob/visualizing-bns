@@ -2,7 +2,7 @@
 
 Learning and visualizing Bayesian Networks made easy
 
-![image1](./images/img1.png)
+![image1](./images/img2.gif)
 
 ## Functionalities
 
