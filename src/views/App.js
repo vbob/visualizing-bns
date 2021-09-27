@@ -5,6 +5,7 @@ import { Main } from '../components/Main';
 import { Sidebar } from '../components/Sidebar';
 
 import './App.css'
+import { Probabilities } from '../components/Probabilities';
 
 const { Header, Content } = Layout;
 
@@ -21,8 +22,11 @@ function App() {
               <Col xs={24} md={6} style={{ borderRight: '1px solid #dddddd', paddingRight: '24px' }}>
                 <Sidebar />
               </Col>
-              <Col xs={24} md={18} style={{ paddingLeft: '24px' }}>
+              <Col xs={24} md={9} style={{ paddingLeft: '24px', borderRight: '1px solid #dddddd', paddingRight: '24px' }}>
                 <Main />
+              </Col>
+              <Col xs={24} md={9} style={{ paddingLeft: '24px' }}>
+                <Probabilities />
               </Col>
             </Row>
           </div>

@@ -1,0 +1,12 @@
+#sidebar {
+    min-height: 100%;
+}
+
+#sidebar-title {
+    min-width: 100%;
+    margin-bottom: 20px;
+}
+
+#color-picker {
+    box-shadow: none;
+}

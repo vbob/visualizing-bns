@@ -3,10 +3,10 @@ import { NetworkContext } from '../contexts/NetworkContext'
 
 import * as d3 from 'd3'
 
-const [height, width] = [200, 200]
+const [height, width] = [150, 150]
 
 function BayesianNetwork(props) {
-    const { network } = useContext(NetworkContext)
+    const { network, color } = useContext(NetworkContext)
 
     useEffect(() => {
         const drag = simulation => {
@@ -54,7 +54,7 @@ function BayesianNetwork(props) {
             const svg = d3.select("#visualization")
                 .append("svg")
                 .attr("viewBox", [0, 0, width, height])
-                .style("font", "8px sans-serif");
+                .style("font", "5px sans-serif");
 
             svg.append("defs").selectAll("marker")
                 .data(["end"])
@@ -67,7 +67,7 @@ function BayesianNetwork(props) {
                 .attr("markerHeight", 4)
                 .attr("orient", "auto")
                 .append("path")
-                .attr("fill", "#E05454")
+                .attr("fill", color.links)
                 .attr("d", "M0,-5L10,0L0,5");
 
 
@@ -77,11 +77,11 @@ function BayesianNetwork(props) {
                 .selectAll("path")
                 .data(links)
                 .join("path")
-                .attr("stroke", "#E05454")
+                .attr("stroke", color.links)
                 .attr("marker-end", d => `url(#end)`);
 
             const node = svg.append("g")
-                .attr("fill", "#FB2F01")
+                .attr("fill", color.nodes)
                 .attr("stroke-linecap", "round")
                 .attr("stroke-linejoin", "round")
                 .selectAll("g")
@@ -98,6 +98,7 @@ function BayesianNetwork(props) {
                 .attr("x", 8)
                 .attr("y", "0.31em")
                 .text(d => d.id)
+                .attr("color", "black")
                 .clone(true).lower()
                 .attr("fill", "none")
                 .attr("stroke", "white")
@@ -113,7 +114,7 @@ function BayesianNetwork(props) {
         return () => {
             d3.select("#visualization svg").remove()
         }
-    }, [network])
+    }, [network, color])
 
 
     return (

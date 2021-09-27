@@ -39,15 +39,14 @@
         {
             "variable": "Height",
             "parents": [],
+            "parentsStates": [],
             "p": [
                 {
                     "class": "high",
-                    "parentsStates": [],
                     "p": 0.5
                 },
                 {
                     "class": "low",
-                    "parentsStates": [],
                     "p": 0.5
                 }
             ]
@@ -56,14 +55,14 @@
             "variable": "Diameter",
             "parents": [
                 "Species"
+            ],"parentsStates": [
+                "Distichus",
+                "Sagrei"
             ],
             "p": [
                 {
                     "class": "narrow",
-                    "parentsStates": [
-                        "Distichus",
-                        "Sagrei"
-                    ],
+                    
                     "p": [
                         0.50,
                         0.75
@@ -71,10 +70,7 @@
                 },
                 {
                     "class": "wide",
-                    "parentsStates": [
-                        "Distichus",
-                        "Sagrei"
-                    ],
+                    
                     "p": [
                         0.50,
                         0.25
@@ -86,14 +82,14 @@
             "node": "Species",
             "parents": [
                 "Height"
+            ],"parentsStates": [
+                "high",
+                "low"
             ],
             "p": [
                 {
                     "class": "Distichus",
-                    "parentsStates": [
-                        "high",
-                        "low"
-                    ],
+                    
                     "p": [
                         0.50,
                         1
@@ -101,10 +97,7 @@
                 },
                 {
                     "class": "Sagrei",
-                    "parentsStates": [
-                        "high",
-                        "low"
-                    ],
+                    
                     "p": [
                         0.50,
                         0

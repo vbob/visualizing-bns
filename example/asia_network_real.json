@@ -98,15 +98,14 @@
         {
             "variable": "asia",
             "parents": [],
+            "parentsStates": [],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [],
                     "p": 0.5
                 },
                 {
                     "class": "no",
-                    "parentsStates": [],
                     "p": 0.5
                 }
             ]
@@ -114,15 +113,14 @@
         {
             "variable": "smoke",
             "parents": [],
+            "parentsStates": [],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [],
                     "p": 0.5
                 },
                 {
                     "class": "no",
-                    "parentsStates": [],
                     "p": 0.5
                 }
             ]
@@ -132,13 +130,13 @@
             "parents": [
                 "asia"
             ],
+            "parentsStates": [
+                "yes",
+                "no"
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.05,
                         0.01
@@ -146,10 +144,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.95,
                         0.99
@@ -162,13 +156,13 @@
             "parents": [
                 "smoke"
             ],
+            "parentsStates": [
+                "yes",
+                "no"
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.1,
                         0.01
@@ -176,10 +170,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.9,
                         0.99
@@ -192,13 +182,13 @@
             "parents": [
                 "smoke"
             ],
+            "parentsStates": [
+                "yes",
+                "no"
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.6,
                         0.3
@@ -206,10 +196,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.4,
                         0.7
@@ -223,27 +209,27 @@
                 "lung",
                 "tub"
             ],
+            "parentsStates": [
+                [
+                    "yes",
+                    "yes"
+                ],
+                [
+                    "no",
+                    "yes"
+                ],
+                [
+                    "yes",
+                    "no"
+                ],
+                [
+                    "no",
+                    "no"
+                ]
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        [
-                            "yes",
-                            "yes"
-                        ],
-                        [
-                            "no",
-                            "yes"
-                        ],
-                        [
-                            "yes",
-                            "no"
-                        ],
-                        [
-                            "no",
-                            "no"
-                        ]
-                    ],
                     "p": [
                         1,
                         1,
@@ -253,24 +239,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        [
-                            "yes",
-                            "yes"
-                        ],
-                        [
-                            "no",
-                            "yes"
-                        ],
-                        [
-                            "yes",
-                            "no"
-                        ],
-                        [
-                            "no",
-                            "no"
-                        ]
-                    ],
                     "p": [
                         0,
                         0,
@@ -285,13 +253,13 @@
             "parents": [
                 "either"
             ],
+            "parentsStates": [
+                "yes",
+                "no"
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.98,
                         0.05
@@ -299,10 +267,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        "yes",
-                        "no"
-                    ],
                     "p": [
                         0.02,
                         0.95
@@ -316,27 +280,27 @@
                 "bronc",
                 "either"
             ],
+            "parentsStates": [
+                [
+                    "yes",
+                    "yes"
+                ],
+                [
+                    "no",
+                    "yes"
+                ],
+                [
+                    "yes",
+                    "no"
+                ],
+                [
+                    "no",
+                    "no"
+                ]
+            ],
             "p": [
                 {
                     "class": "yes",
-                    "parentsStates": [
-                        [
-                            "yes",
-                            "yes"
-                        ],
-                        [
-                            "no",
-                            "yes"
-                        ],
-                        [
-                            "yes",
-                            "no"
-                        ],
-                        [
-                            "no",
-                            "no"
-                        ]
-                    ],
                     "p": [
                         0.9,
                         0.7,
@@ -346,24 +310,6 @@
                 },
                 {
                     "class": "no",
-                    "parentsStates": [
-                        [
-                            "yes",
-                            "yes"
-                        ],
-                        [
-                            "no",
-                            "yes"
-                        ],
-                        [
-                            "yes",
-                            "no"
-                        ],
-                        [
-                            "no",
-                            "no"
-                        ]
-                    ],
                     "p": [
                         0.1,
                         0.3,
