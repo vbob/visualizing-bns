@@ -43,7 +43,7 @@ The app is divided in two major parts:
     * ~Opening JSON files with network models~;
     * Plotting the networks with D3.js:
         * ~The plot will contain the edges and nodes~;
-        * Each nodes when clicked will display its Conditional Probability Table.
+        * Each nodes when clicked ~will display its Conditional Probability Table~.
 
 2. Create a Django webserver capable of:
     * Receiving a CSV dataset;
